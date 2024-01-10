@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="../styles.css">
+</head>
+<body style="display: flex; flex-direction: column;">
+    <table id="userData">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="userDataBody">
+        </tbody>
+    </table>
+    <div class="goto-btns">
+        <button onclick="window.location.href='textTask.html'" class="goto-btn" >Go To Text Task</button>
+        <button onclick="window.location.href='index.html'" class="goto-btn" >Go To Hover Task</button>
+    </div>
+    <!-- --------------------------------------------------------------------------------- -->
+  <script>
+    // get data 
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve data from localStorage
+    let storedUsers = JSON.parse(localStorage.getItem("users"));
+
+    // Check if there are stored users
+    if (storedUsers) {
+        // Get the table body
+        let tableBody = document.getElementById("userDataBody");
+
+        // Create HTML content for the new row
+        let newRowHTML = `
+            <tr>
+                <td>${storedUsers.email}</td>
+                <td>${storedUsers.username}</td>
+                <td >${storedUsers.address}</td>
+                <td style="width: 50px"><button class="delete-btn">Delete</button></td>
+            </tr>
+        `;
+       
+
+        // Append the new row to the table body
+        tableBody.innerHTML = newRowHTML;
+
+        // delete button 
+        let deleteButtons = document.getElementsByClassName('delete-btn');
+        for (let button of deleteButtons) {
+            button.addEventListener('click', function() {
+                localStorage.removeItem('users');
+                tableBody.innerHTML = '';
+            });
+        }
+    
+    }
+});
+
+
+  </script>
+</body>
+</html>

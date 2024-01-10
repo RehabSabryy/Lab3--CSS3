@@ -1,0 +1,140 @@
+body {
+    display: flex;
+}
+.container {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.finding-dori { 
+    width: 60%;
+    transition: opacity 0.9s ease-in-out;
+}
+
+.finding-dori:hover {
+    opacity: 0;
+}
+.btn {
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-color: #9b3535;
+    color: white;
+    border-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+ transition: background-color 1s;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn:hover {
+    animation: colorChange 4s infinite alternate;
+  }
+
+  @keyframes colorChange {
+    0% {
+      background-color: blue;
+    }
+    20% {
+      background-color: orange;
+    }
+    40% {
+      background-color: green;
+    }
+    60% {
+      background-color: yellow;
+    }
+    80% {
+      background-color: purple;
+    }
+    100% {
+      background-color: pink;
+    }
+  }
+
+  .goto-btn {
+        width: 210px;
+        height: 50px;
+        margin-top: 50px;
+        border-radius: 20px;
+        background-color: #9b3535;
+        color: white;
+        border-color: transparent;
+        font-size: 20px;
+        cursor: pointer;
+        align-self: center;
+  }
+
+  .finding-dori2 {
+    width: 60%;
+  }
+.task2 {
+    font-family: 'Bungee Spice', sans-serif;
+    position: absolute;
+    left: 406px;
+    top: 445px;
+    font-size: 45px;
+    color: rgb(37, 14, 148);
+    text-shadow: 2px 2px 0px rgb(15, 12, 99),
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+  }
+  form { 
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+  }
+  input {
+    width: 268px;
+    height: 24px;
+    border-radius: 10px;
+  }
+
+  input[type='email']:focus,
+  input[type='email']:valid,
+  input[type='email']:invalid,
+
+  input[type='text']:focus,
+  input[type='text']:valid,
+  input[type='text']:invalid
+
+   {
+    padding: 5px;
+    border: solid rgb(9, 186, 9) 3px;
+    outline: none;
+  }
+  input[type='email']:invalid,
+  input[type='text']:invalid {
+    padding: 5px;
+    border: solid rgb(207, 17, 10) 3px;
+    outline: none;
+  }
+
+  input[type='email']:focus,
+  input[type='text']:focus {
+    padding: 5px;
+    border: solid rgb(20, 8, 178) 3px;
+    outline: none;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+.delete-btn {
+    background-color:#9b3535;
+    color: white;
+    width: 100px;
+    height: 30px;
+
+}
